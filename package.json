@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-hw",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yurii-Voronich/nodejs-hw.git"
+  },
+  "keywords": [],
+  "author": "Yurii-Voronych <voronich97@gmail.com>",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Yurii-Voronich/nodejs-hw/issues"
+  },
+  "homepage": "https://github.com/Yurii-Voronich/nodejs-hw#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "eslint": "^9.37.0",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10"
+  }
+}
