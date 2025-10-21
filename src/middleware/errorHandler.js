@@ -1,6 +1,15 @@
+import { isHttpError } from 'http-errors';
+
 export const errorHandler = (error, req, res, next) => {
-  const { status = 500, message = 'Server error' } = error;
-  res.status(status).json({
-    message,
+  if (isHttpError(error)) {
+    res.status(error.status).json({
+      message: error.message,
+    });
+    return;
+  }
+
+  console.error('Unexpected error:', error);
+  res.status(500).json({
+    message: 'Server error',
   });
 };

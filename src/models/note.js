@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const contactShchema = new Schema(
+const noteSchema = new Schema(
   {
     title: {
       type: String,
@@ -9,7 +9,6 @@ const contactShchema = new Schema(
     },
     content: {
       type: String,
-      required: true,
       default: '',
       trim: true,
     },
@@ -33,6 +32,6 @@ const contactShchema = new Schema(
   { versionKey: false, timestamps: true },
 );
 
-const Note = model('note', contactShchema);
+const Note = model('Note', noteSchema);
 
 export default Note;

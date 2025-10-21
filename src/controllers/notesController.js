@@ -8,27 +8,33 @@ export const getAllNotes = async (req, res) => {
 };
 
 export const getNoteById = async (req, res) => {
-  const { id } = req.params;
-  const result = await Note.findById(id);
+  const { noteId } = req.params;
+  const result = await Note.findById(noteId);
   if (!result) {
-    throw createHttpError(404, `Contact with id=${id} not found`);
+    throw createHttpError(404, `Note with id=${noteId} not found`);
   }
 
   res.json(result);
 };
 
 export const deleteNote = async (req, res) => {
-  const { id } = req.params;
-  const result = await Note.findByIdAndDelete(id);
-  if (!result) throw createHttpError(404, `Contact with id=${id} not found`);
+  const { noteId } = req.params;
+  const result = await Note.findByIdAndDelete(noteId);
+  if (!result) throw createHttpError(404, `Note with id=${noteId} not found`);
 
   res.json(result);
 };
 
 export const updateNote = async (req, res) => {
-  const { id } = req.params;
-  const result = await Note.findByIdAndUpdate(id, req.body, { new: true });
-  if (!result) throw createHttpError(404, `Contact with id=${id} not found`);
+  const { noteId } = req.params;
+  const result = await Note.findByIdAndUpdate(noteId, req.body, { new: true });
+  if (!result) throw createHttpError(404, `Note with id=${noteId} not found`);
 
   res.json(result);
+};
+
+export const createNote = async (req, res) => {
+  const result = await Note.create(req.body);
+
+  res.status(201).json(result);
 };
