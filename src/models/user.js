@@ -2,7 +2,7 @@ import { Schema, model } from 'mongoose';
 
 const userSchema = new Schema(
   {
-    userName: {
+    username: {
       type: String,
       trim: true,
     },
@@ -15,7 +15,7 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
-      min: 8,
+      minlength: 8,
     },
   },
   { versionKey: false, timestamps: true },
