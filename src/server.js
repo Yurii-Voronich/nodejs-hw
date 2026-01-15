@@ -11,6 +11,7 @@ import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
+import { swaggerMiddleware } from './swagger.js';
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(logger);
 app.use('/notes', notesRoutes);
 app.use('/auth', authRoutes);
 app.use('/users', userRoutes);
+app.use('/api-docs', ...swaggerMiddleware);
 
 app.use(notFoundHandler);
 app.use(errors());

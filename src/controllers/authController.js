@@ -30,6 +30,7 @@ export const registerUser = async (req, res, next) => {
 
   res.status(201).json(newUser);
 };
+
 export const loginUser = async (req, res, next) => {
   const { email, password } = req.body;
 
@@ -51,6 +52,7 @@ export const loginUser = async (req, res, next) => {
 
   res.status(200).json(user);
 };
+
 export const refreshUserSession = async (req, res, next) => {
   const session = await Session.findOne({
     _id: req.cookies.sessionId,
@@ -78,6 +80,7 @@ export const refreshUserSession = async (req, res, next) => {
     message: 'Session refreshed',
   });
 };
+
 export const logoutUser = async (req, res) => {
   const { sessionId } = req.cookies;
 
