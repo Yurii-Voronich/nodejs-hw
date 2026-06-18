@@ -1,4 +1,4 @@
-# NodeJS HW Backend API
+# Notes backend api
 
 Backend API built with **Node.js**, **Express**, and **MongoDB**.
 Project implements authentication via **HTTP-only cookies**, notes CRUD, user avatar upload, and password reset via email.
@@ -190,7 +190,6 @@ All errors return JSON with a message.
 
 - MongoDB collections are created automatically
 - Sessions are invalidated on password reset
-- Free MongoDB Atlas clusters **do not support backups**
 
 ---
 
@@ -203,7 +202,3 @@ This project is intended as:
 - a reference for cookie-based authentication
 
 ---
-
-## 📄 License
-
-MIT
